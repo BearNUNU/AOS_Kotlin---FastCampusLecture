@@ -13,5 +13,5 @@ fun main(){
     val map1 = mapOf((1 to "안녕"), (2 to "hello"))
     val map2 = mutableMapOf((1 to "안녕"), (2 to "hello"))
     map2[3] = "응"
-    
+
 }

@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         //SAM (Single Abstract Method
         val view= View(this)
-        view.setOnKeyListener{ println("프린트됨"}
+//        view.setOnKeyListener{ println("프린트됨"}
     }
 }
 

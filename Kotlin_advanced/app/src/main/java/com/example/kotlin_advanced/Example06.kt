@@ -39,6 +39,6 @@ open class Book(){
 
     companion object{
     val NAME = "name"
-        
+
     }
 }

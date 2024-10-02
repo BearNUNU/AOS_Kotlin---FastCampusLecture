@@ -40,9 +40,35 @@ package com.example.kotlin_advanced
             it.age  // user2가 null이 아닐 경우에만 age에 접근
         }
         println("user2의 나이: $age2")  // user2가 null이면 null 출력
+
+
         /////////////////////////////////////////2. run ///////////////////////////////////////////////////
+        //수신객체.run{this ->
+        //마지막 줄이 리턴
+        //}
+        val kid = User(name = "baby", 5, false)
+        val kidsage = kid.run { this.age }
 
 
+        /////////////////////////////////////////3. apply ///////////////////////////////////////////////////
+        //수신객체.apply{
+        //return값이 수신객체 자기 자신
+        //}
+
+        val female = User("슬기", 20 , true, true)
+        val femailValue = female.apply{
+            hasGlasses = false
+        }
+
+        /////////////////////////////////////////3. also ///////////////////////////////////////////////////
+        // 수신객체.also{it -> (로컬 variable로 선언 가능
+        // return 수신객체
+        //}
+        val male = User("철수", 30, true, true)
+        val maleValue = male.also {
+          it.name
+        }
+        println(maleValue)
     }
 
-class User(val name: String, val age: Int, val gender: Boolean)
+class User(val name: String, val age: Int, val gender: Boolean, var hasGlasses : Boolean = true)

@@ -28,3 +28,22 @@ package com.example.android_basic
  * finish()로 명시적으로 끝내거나
  * configurationChange (ex. 기기회전, 멀티 윈도우)
  * */
+
+
+
+/**
+ * 1. Activity가 실행, 종료 생명주기
+ * 액티비티 실행 시: onCreate -> onStart -> onResume
+ * 액티비티 종료 시: (명시적으로 finish()) onPause -> onStop -> onDestroy
+ *
+ *
+ * 2. 다른 앱 실행 시, 생명주기(홈버튼으로)
+ * 홈버튼 클릭 시: onPause -> onStop
+ * 백그라운드에서 다시 포커스 시: onRestart -> onStart -> onResume
+ *
+ * 3. 다른 Activity 실행 시, 생명주기
+ *다른 액티비티 실행 시 기존 Activity: onPause -> onStop
+ *다른 Activity: onCreate -> onStart -> onStop
+ *다른 Activity에서 MainActivity로 back : Main은 onRestart -> onStart -> onResume
+ *다른 Activity에서 MainActivity로 back : 다른Activity onPause -> onStop -> onDestroy
+ * */

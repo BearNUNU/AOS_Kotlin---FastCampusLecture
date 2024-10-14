@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("org.jlleitschuh.gradle.ktlint")
+    id("io.gitlab.arturbosch.detekt").version("1.23.3")
 }
 
 android {
@@ -49,9 +50,19 @@ android {
         }
     }
 }
+configurations{
+    ktlint
+    detekt
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    config = files("$rootDir/config/detekt.yml")
+}
+ß
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

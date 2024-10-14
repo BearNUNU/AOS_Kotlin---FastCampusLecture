@@ -1,0 +1,19 @@
+build:
+  maxIssues: 0
+
+config:
+  validation: true
+  warningsAsErrors: true
+
+  complexity:
+    active: true
+    TooManyFunctions:
+      active: true
+      thresholdInFiles: 30
+      thresholdInClasses: 20
+      thresholdInInterfaces: 10
+      thresholdInObjects: 20
+      thresholdInEnums: 5
+      ignoreDeprecated: true
+      ignorePrivate: true
+      ignoreOverridden: false

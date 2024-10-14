@@ -29,8 +29,6 @@ package com.example.android_basic
  * configurationChange (ex. 기기회전, 멀티 윈도우)
  * */
 
-
-
 /**
  * 1. Activity가 실행, 종료 생명주기
  * 액티비티 실행 시: onCreate -> onStart -> onResume

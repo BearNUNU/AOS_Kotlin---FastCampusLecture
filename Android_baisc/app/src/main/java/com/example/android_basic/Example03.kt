@@ -32,7 +32,7 @@ package com.example.android_basic
  * 그렇기에 객체 할당과 같이 리소스가 많이 소모되는 로직은 추가하면x
  *
  *
- * 4.ViewUpdate(onViewUpdate) 
+ * 4.ViewUpdate(onViewUpdate)
  * 런타임에 뷰를 다시 그리게 하는 함수
  * invalidate: view에 변화가 생겨서 다시 그릴 때
  * requestLayout: view를 처음부터 그려야 할 때

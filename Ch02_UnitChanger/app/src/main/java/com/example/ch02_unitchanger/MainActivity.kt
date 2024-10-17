@@ -8,6 +8,8 @@ import com.example.ch02_unitchanger.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var inputNum: Long = 0
+    private var cmToM = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -18,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         val inputEditText = binding.textInput
         val inputUnitTextView = binding.textInputUnit
         val buttonConverter = binding.buttonUnitConverter
-        var inputNum: Long = 0
-        var cmToM = true
 
         inputEditText.addTextChangedListener { text ->
             inputNum = if (text.isNullOrEmpty()) {
@@ -48,5 +48,18 @@ class MainActivity : AppCompatActivity() {
                 outputTextView.text = inputNum.times(100).toString()
             }
         }
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("cmToM", cmToM)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        cmToM = savedInstanceState.getBoolean("cmToM")
+        binding.textInputUnit.text = if (cmToM) "cm" else "m"
+        binding.textOutputUnit.text = if (cmToM) "m" else "cm"
     }
 }
